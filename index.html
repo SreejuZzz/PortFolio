@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sreejith M S - DevOps Engineer</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Custom CSS variables for theme */
+        :root {
+            --background-light: #f0f2f5;
+            --surface-light: #ffffff;
+            --text-light: #2c3e50;
+            --primary-light: #3498db;
+            --accent-light: #2ecc71;
+            --shadow-light: rgba(0, 0, 0, 0.1);
+
+            --background-dark: #1a202c;
+            --surface-dark: #2d3748;
+            --text-dark: #e2e8f0;
+            --primary-dark: #63b3ed;
+            --accent-dark: #48bb78;
+            --shadow-dark: rgba(0, 0, 0, 0.5);
+        }
+
+        /* Apply variables based on theme class */
+        .light {
+            --bg-color: var(--background-light);
+            --surface-color: var(--surface-light);
+            --text-color: var(--text-light);
+            --primary-color: var(--primary-light);
+            --accent-color: var(--accent-light);
+            --shadow-color: var(--shadow-light);
+            --glass-bg: rgba(255, 255, 255, 0.6);
+        }
+
+        .dark {
+            --bg-color: var(--background-dark);
+            --surface-color: var(--surface-dark);
+            --text-color: var(--text-dark);
+            --primary-color: var(--primary-dark);
+            --accent-color: var(--accent-dark);
+            --shadow-color: var(--shadow-dark);
+            --glass-bg: rgba(45, 55, 72, 0.6);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+
+        .card {
+            background-color: var(--surface-color);
+            box-shadow: 0 4px 6px -1px var(--shadow-color), 0 2px 4px -1px var(--shadow-color);
+            transition: background-color 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        .glass-card {
+            background-color: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px); /* For Safari */
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            transition: background-color 0.5s ease, box-shadow 0.5s ease, border 0.5s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--surface-color);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        .theme-toggle-btn {
+            background-color: var(--surface-color);
+            color: var(--text-color);
+            transition: background-color 0.5s ease, color 0.5s ease, transform 0.2s ease;
+        }
+
+        .theme-toggle-btn:hover {
+            transform: scale(1.05);
+        }
+
+        a {
+            color: var(--primary-color);
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--accent-color);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center py-8 px-4 sm:px-6 lg:px-8">
+
+    <!-- Theme Toggle Button -->
+    <button id="theme-toggle" class="theme-toggle-btn fixed top-4 right-4 p-3 rounded-full shadow-lg focus:outline-none focus:ring-2 focus:ring-primary-color">
+        <i class="fas fa-moon text-xl" id="theme-icon"></i>
+    </button>
+
+    <!-- Header Section -->
+    <header class="w-full max-w-4xl text-center mb-12">
+        <div class="glass-card p-6 md:p-8 rounded-xl">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-2 leading-tight">Sreejith M S</h1>
+            <p class="text-xl sm:text-2xl font-medium text-primary-color">DevOps Engineer</p>
+            <p class="text-md sm:text-lg mt-4 max-w-2xl mx-auto">
+                With 7 years of diverse IT experience, I specialize in bridging development and operations to deliver robust and scalable solutions.
+            </p>
+        </div>
+    </header>
+
+    <main class="w-full max-w-4xl space-y-12">
+
+        <!-- About Me Section -->
+        <section id="about" class="card p-6 md:p-8 rounded-xl">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6 border-b-2 border-primary-color pb-2">About Me</h2>
+            <p class="text-lg mb-4 leading-relaxed">
+                I embarked on my IT journey in 2018 as a <span class="font-semibold text-primary-color">Network Administrator</span>, laying the foundation for robust infrastructure. My passion for systems led me to become a <span class="font-semibold text-primary-color">Linux Administrator</span> in 2020, where I honed my skills in open-source environments.
+            </p>
+            <p class="text-lg mb-4 leading-relaxed">
+                Recognizing the transformative power of cloud technology, I transitioned into a <span class="font-semibold text-primary-color">Cloud Architect</span> role in 2022, designing and implementing scalable cloud solutions. Since 2023, I've been working as a <span class="font-semibold text-primary-color">DevOps Engineer</span> at Synnefo Solutions, focusing on automating workflows, optimizing deployments, and fostering seamless collaboration between development and operations teams.
+            </p>
+            <p class="text-lg leading-relaxed">
+                Beyond my professional role, I am passionate about sharing knowledge. I actively mentor students and working professionals, guiding them to gain deep insights and practical skills in networking, Linux administration, cloud architecture, and DevOps practices.
+            </p>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="card p-6 md:p-8 rounded-xl">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6 border-b-2 border-primary-color pb-2">Skills & Expertise</h2>
+            <div class="flex flex-wrap gap-3">
+                <span class="bg-primary-color text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">DevOps</span>
+                <span class="bg-accent-color text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">Cloud Architecture</span>
+                <span class="bg-gray-700 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">Linux Administration</span>
+                <span class="bg-blue-500 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">Networking</span>
+                <span class="bg-orange-500 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">AWS</span>
+                <span class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">Azure</span>
+                <span class="bg-green-600 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">Kubernetes</span>
+                <span class="bg-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">Docker</span>
+                <span class="bg-red-500 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">CI/CD</span>
+                <span class="bg-yellow-500 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">Terraform</span>
+                <span class="bg-indigo-500 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">Ansible</span>
+                <span class="bg-teal-500 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">Python</span>
+            </div>
+        </section>
+
+        <!-- Projects Section (Placeholder) -->
+        <section id="projects" class="card p-6 md:p-8 rounded-xl">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6 border-b-2 border-primary-color pb-2">Projects</h2>
+            <p class="text-lg">
+                Details about my projects will be added here soon. Stay tuned!
+            </p>
+            <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Example Project Card -->
+                <div class="glass-card p-5 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-2">Project Title One</h3>
+                    <p class="text-md mb-3">A brief description of this project, highlighting key technologies and my role.</p>
+                    <a href="#" class="text-primary-color hover:text-accent-color font-medium flex items-center">
+                        View Project <i class="fas fa-external-link-alt ml-2 text-sm"></i>
+                    </a>
+                </div>
+                <div class="glass-card p-5 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-2">Project Title Two</h3>
+                    <p class="text-md mb-3">Another project description, showcasing different skills or outcomes.</p>
+                    <a href="#" class="text-primary-color hover:text-accent-color font-medium flex items-center">
+                        View Project <i class="fas fa-external-link-alt ml-2 text-sm"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="card p-6 md:p-8 rounded-xl">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6 border-b-2 border-primary-color pb-2">Connect With Me</h2>
+            <div class="flex flex-wrap items-center justify-center gap-6">
+                <a href="https://www.linkedin.com/in/sreejith-sreenivas-110bb217a/" target="_blank" rel="noopener noreferrer"
+                   class="btn-primary px-6 py-3 rounded-full text-lg font-semibold flex items-center shadow-md">
+                    <i class="fab fa-linkedin mr-3 text-xl"></i> LinkedIn
+                </a>
+                <a href="https://www.github.com/SreejuZzz" target="_blank" rel="noopener noreferrer"
+                   class="btn-primary px-6 py-3 rounded-full text-lg font-semibold flex items-center shadow-md">
+                    <i class="fab fa-github mr-3 text-xl"></i> GitHub
+                </a>
+                <a href="https://www.instagram.com/matte_black003/" target="_blank" rel="noopener noreferrer"
+                   class="btn-primary px-6 py-3 rounded-full text-lg font-semibold flex items-center shadow-md">
+                    <i class="fab fa-instagram mr-3 text-xl"></i> Instagram
+                </a>
+                <a href="https://www.facebook.com/SreejithSreejuZzz" target="_blank" rel="noopener noreferrer"
+                   class="btn-primary px-6 py-3 rounded-full text-lg font-semibold flex items-center shadow-md">
+                    <i class="fab fa-facebook mr-3 text-xl"></i> Facebook
+                </a>
+                <a href="https://t.me/Matte_Black" target="_blank" rel="noopener noreferrer"
+                   class="btn-primary px-6 py-3 rounded-full text-lg font-semibold flex items-center shadow-md">
+                    <i class="fab fa-telegram-plane mr-3 text-xl"></i> Telegram
+                </a>
+                <a href="https://x.com/Matte_Black003" target="_blank" rel="noopener noreferrer"
+                   class="btn-primary px-6 py-3 rounded-full text-lg font-semibold flex items-center shadow-md">
+                    <i class="fab fa-x-twitter mr-3 text-xl"></i> X (Twitter)
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="w-full max-w-4xl text-center mt-12 py-6 text-sm opacity-80">
+        <p>&copy; 2024 Sreejith M S. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            const themeIcon = document.getElementById('theme-icon');
+            const htmlElement = document.documentElement;
+
+            // Function to set the theme
+            const setTheme = (theme) => {
+                if (theme === 'dark') {
+                    htmlElement.classList.remove('light');
+                    htmlElement.classList.add('dark');
+                    themeIcon.classList.remove('fa-moon');
+                    themeIcon.classList.add('fa-sun');
+                } else {
+                    htmlElement.classList.remove('dark');
+                    htmlElement.classList.add('light');
+                    themeIcon.classList.remove('fa-sun');
+                    themeIcon.classList.add('fa-moon');
+                }
+                localStorage.setItem('theme', theme);
+            };
+
+            // Get saved theme or default to system preference
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+            if (savedTheme) {
+                setTheme(savedTheme);
+            } else if (prefersDark) {
+                setTheme('dark');
+            } else {
+                setTheme('light');
+            }
+
+            // Toggle theme on button click
+            themeToggleBtn.addEventListener('click', () => {
+                if (htmlElement.classList.contains('light')) {
+                    setTheme('dark');
+                } else {
+                    setTheme('light');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
