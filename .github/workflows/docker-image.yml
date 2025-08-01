@@ -12,9 +12,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag portfolio:$(date +%s)
+    - name: Build and save the Docker image
+      run: docker build -t portfolio.html:latest .
+      run: docker save portfolio.html:latest -o portfolio($date).tar
     - uses: actions/upload-artifact@v4
       with:
-        name: test-results
-        path: output/test-results.html
+        name: portfolio.tar
+        path: portfolio.tar
