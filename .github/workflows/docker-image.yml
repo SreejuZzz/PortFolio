@@ -15,3 +15,6 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag portfolio:$(date +%s)
     - uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: output/test-results.html
