@@ -12,6 +12,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Set lowercase IMAGE_NAME
+        run: echo "IMAGE_NAME=ghcr.io/${GITHUB_REPOSITORY_OWNER,,}/portfolio:latest" >> $GITHUB_ENV
       - name: Checkout code
         uses: actions/checkout@v4
 
