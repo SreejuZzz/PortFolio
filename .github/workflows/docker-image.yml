@@ -44,7 +44,8 @@ jobs:
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_KEY }}
           script: |
-            echo "${{ secrets.GHCR_PAT }}" | docker login ghcr.io -u ${{ github.repository_owner }} --password-stdin
+            IMAGE_NAME=ghcr.io/sreejuzzz/portfolio:latest
+            echo "${{ secrets.GHCR_PAT }}" | docker login ghcr.io -u sreejuzzz --password-stdin
             docker pull $IMAGE_NAME
             docker stop portfolio || true
             docker rm portfolio || true
